@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  mysql_service:
+    container_name: mysql_service
+    build: ./mysql
+    ports:
+      - "6603:3306"
+
+  api_service:
+    container_name: api_service
+    build: .
+    ports:
+      - "8000:8000"
