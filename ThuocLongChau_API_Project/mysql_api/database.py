@@ -1,8 +1,7 @@
 import mysql.connector
 import requests
 from pydantic import BaseModel
-from dotenv import load_dotenv
-import os
+from dotenv import dotenv_values
 class Category(BaseModel):
     id: int
     name: str
@@ -30,12 +29,13 @@ class Product(BaseModel):
     product_ranking: float
     specification: str
 
-load_dotenv()
-DATABASE_NAME=os.getenv("DATABASE_NAME")
-HOST=os.getenv("HOST")
-PORT=os.getenv("PORT")
-USER=os.getenv("USER")
-PASSWORD=os.getenv("PASSWORD")
+config_cred = dotenv_values(".env")
+
+DATABASE_NAME=config_cred.get("DATABASE_NAME")
+HOST=config_cred.get("HOST")
+PORT=config_cred.get("PORT")
+USER=config_cred.get("USER")
+PASSWORD=config_cred.get("PASSWORD")
 
 db = mysql.connector.connect(
     host=HOST,

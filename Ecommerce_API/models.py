@@ -9,14 +9,14 @@ class User(Model):
     email =fields.CharField(max_length=255,null=False,unique=True)
     password = fields.CharField(max_length=100,null=False)
     is_verified = fields.BooleanField(default=False)
-    join_data = fields.DatetimeField(default=datetime.now)
+    join_date = fields.DatetimeField(default=datetime.now)
 
 class Business(Model):
     id = fields.IntField(pk=True,index=True)
     business_name = fields.CharField(max_length=255,null=False)
     city = fields.CharField(max_length=255,null=False,default="Unspecified")
     region =fields.CharField(max_length=255,null=False,default="Unspecified")
-    business_description = fields.CharField(max_length=255,null=False)
+    business_description = fields.CharField(max_length=255,null=True)
     logo = fields.CharField(max_length=255,null=False,default="default.jpg")
     owner = fields.ForeignKeyField("models.User",related_name="business")#PK 1 User có nhiều Business
     
@@ -36,7 +36,7 @@ class Product(Model):
     
 #create các class Pydantic data object, data input, data output
 user_pydantic = pydantic_model_creator(User, name="User",exclude=("is_verified",))
-user_pydanticIn = pydantic_model_creator(User, name="UserIn",exclude_readonly=True)#exclude_readonly loại bỏ các trường chỉ đọc được để cập nhập được dữ liệu
+user_pydanticIn = pydantic_model_creator(User, name="UserIn",exclude_readonly=True,exclude=("is_verified","join_date"))#exclude_readonly loại bỏ các trường chỉ đọc được để cập nhập được dữ liệu
 user_pydanticOut = pydantic_model_creator(User, name="UserOut",exclude=("password",))#Xuất ra User loại bỏ trường Password
 
 business_pydantic = pydantic_model_creator(Business, name="Business")
