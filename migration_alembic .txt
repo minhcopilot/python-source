@@ -1,0 +1,9 @@
+docker-compose run fastapi-service /bin/sh -c "alembic revision --autogenerate -m "create my table table""
+
+docker-compose run fastapi-service /bin/sh -c "alembic upgrade head"
+
+docker-compose run fastapi-service /bin/sh -c "alembic downgrade -1"
+docker-compose build
+docker-compose up
+
+docker-compose run fastapi-service sh -c "pytest"
