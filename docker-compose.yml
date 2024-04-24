@@ -1,9 +1,6 @@
-version: "3"
+version: "3.9"
 services:
-  core_api:
+  web:
     build: .
-    container_name: "core-api-container"
     ports:
-      - "8000:15400"
-    volumes:
-      - ./app/:/app
+      - "9000:8000"

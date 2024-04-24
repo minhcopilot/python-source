@@ -1,9 +1,14 @@
+To Generate the Migration From Model
 docker-compose run fastapi-service /bin/sh -c "alembic revision --autogenerate -m "create my table table""
 
+To Apply the Migration to Database
 docker-compose run fastapi-service /bin/sh -c "alembic upgrade head"
 
+#To Revert last applied migration
 docker-compose run fastapi-service /bin/sh -c "alembic downgrade -1"
+
 docker-compose build
 docker-compose up
+docker-compose up -d --build
 
 docker-compose run fastapi-service sh -c "pytest"

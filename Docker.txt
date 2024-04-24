@@ -1,0 +1,17 @@
+docker run -it -p 9000:8000 --mount src="D:\DaiHoc\HK223_2023_2024\ChuyenDeNNLT\python_course_223\src",target=/api,type=bind python 3.9.16-slim-buster /bin/bash
+
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+docker commit e87 fastapi:0.1
+
+docker DockerFile
+docker build -t api:0.1 ./
+
+docker run -d  -p 9000:8000 api:0.1 
+
+
+docker-compose up -d
+
+python -m venv venv  
+venv\Scripts\activate
+uvicorn app.main:app --reload
