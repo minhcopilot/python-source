@@ -1,5 +1,5 @@
-from pydantic import BaseModel
-
+from pydantic import BaseModel,EmailStr
+from typing import List
 class TokenResponse(BaseModel):
     token: str
     refresh_token: str
@@ -15,3 +15,6 @@ class RegisterResponse(BaseModel):
     data:object
     class Config:
         from_attributes = True
+
+class EmailSchema(BaseModel):
+    email:List[EmailStr]

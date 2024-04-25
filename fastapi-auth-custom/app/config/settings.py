@@ -22,6 +22,18 @@ class Settings(BaseSettings):
     JWT_ALGORITHM: str = os.getenv('JWT_ALGORITHM', "HS256")
     JWT_TOKEN_EXPIRE: int = os.getenv('JWT_TOKEN_EXPIRE', 30)
     JWT_REFRESH_TOKEN_EXPIRE: int = os.getenv('JWT_REFRESH_TOKEN_EXPIRE', 60)
+    #mail
+    MAIL_USERNAME: str = os.getenv('MAIL_USERNAME')
+    MAIL_PASSWORD: str = os.getenv('EMAIL_APP_PASSWORD')
+    MAIL_FROM: str = os.getenv('MAIL_USERNAME')
+    MAIL_PORT: int = int(os.getenv('MAIL_PORT', 587))
+    MAIL_SERVER: str = os.getenv('MAIL_SERVER', "smtp.gmail.com")
+    USE_CREDENTIALS: bool = os.getenv('USE_CREDENTIALS', "True").lower() == "true"
+    MAIL_STARTTLS: bool = os.getenv('MAIL_STARTTLS', "True").lower() == "true"
+    MAIL_SSL_TLS: bool = os.getenv('MAIL_SSL_TLS', "False").lower() == "true"
+    
+    CLIENT_ID: str  = os.getenv('GOOGLE_CLIENT_ID')
+    CLIENT_SECRET: str  = os.getenv('GOOGLE_CLIENT_SECRET')
     
 def get_settings() -> Settings:
     return Settings()

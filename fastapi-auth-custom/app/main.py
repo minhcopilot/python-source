@@ -5,6 +5,7 @@ from starlette.middleware.authentication import AuthenticationMiddleware
 app=FastAPI()
 app.include_router(user.router)
 app.include_router(user.user_router)
+app.include_router(auth.auth_router)
 app.include_router(auth.router)
 
 # add Middleware

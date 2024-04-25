@@ -5,10 +5,14 @@ from datetime import datetime, timedelta
 from jose import jwt,JWTError
 from fastapi.exceptions import HTTPException
 from starlette.authentication import AuthCredentials, UnauthenticatedUser
-from fastapi import Depends
+from fastapi import Depends,status
 from fastapi.responses import JSONResponse
 from app.config.database import get_db
 from app.models.user import User
+import google.oauth2.credentials
+import google_auth_oauthlib.flow
+
+
 settings = get_settings()
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -25,7 +29,7 @@ async def create_access_token(data, expires_delta: timedelta = None):
     if expires_delta:
         expire = datetime.utcnow() + expires_delta
     else:
-        expire = datetime.utcnow() + timedelta(minutes=30)
+        expire = datetime.utcnow() + timedelta(minutes=15)
     to_encode.update({"exp": expire})
     return jwt.encode(to_encode, settings.JWT_SECRET, algorithm=settings.JWT_ALGORITHM)
 
@@ -93,3 +97,27 @@ class JWTAuth:
         if not user:
             return guest
         return AuthCredentials("authenticated"), None
+    
+
+def get_google_auth_credentials(code):
+    client_secrets = {
+        "web": {
+            "client_id": settings.CLIENT_ID,
+            "client_secret": settings.CLIENT_SECRET,
+            "redirect_uris": ["http://localhost:8000/auth/google/callback"],
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token"
+        }
+    }
+
+    flow = google_auth_oauthlib.flow.Flow.from_client_config(
+        client_secrets,
+        scopes=["openid", "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"],
+        redirect_uri="http://localhost:8000/auth/google/callback"
+    )
+
+    flow.redirect_uri = "http://localhost:8000/auth/google/callback"
+    flow.fetch_token(code=code)
+    credentials = flow.credentials
+
+    return credentials
