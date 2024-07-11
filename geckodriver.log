@@ -1,0 +1,78 @@
+1720682947928	geckodriver	INFO	Listening on 127.0.0.1:55509
+1720682968573	geckodriver	INFO	Listening on 127.0.0.1:55596
+1720683117616	geckodriver	INFO	Listening on 127.0.0.1:55845
+1720683120677	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofileftFxSW"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720683120987	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720683121098	Marionette	INFO	Listening on port 55855
+Read port: 55855
+1720683121273	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+1720683151065	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+1720683158634	Marionette	INFO	Stopped listening on port 55855
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 47: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1720683162427	geckodriver	INFO	Listening on 127.0.0.1:55895
+1720683165513	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-private" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofile5ujukt"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720683165794	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720683165901	Marionette	INFO	Listening on port 55908
+Read port: 55908
+1720683166053	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+1720683193295	Marionette	INFO	Stopped listening on port 55908
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 47: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1720683232088	geckodriver	INFO	Listening on 127.0.0.1:55954
+1720683235163	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofileNZbAbp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720683235428	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720683235536	Marionette	INFO	Listening on port 55964
+Read port: 55964
+1720683235688	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+1720683265753	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1720683273394	Marionette	INFO	Stopped listening on port 55964
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 47: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+
+Dynamically enable window occlusion 0
+1720683247677	Marionette	INFO	Listening on port 56000
+Read port: 56000
+1720683247830	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://devtools/server/connectors/js-process-actor/ContentProcessWatcherRegistry.sys.mjs, line 394: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 569: NotFoundError: No such JSProcessActor 'DevToolsProcess'
+1720683273177	Marionette	INFO	Stopped listening on port 56000
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 47: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

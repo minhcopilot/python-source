@@ -16,6 +16,7 @@ Chúng ta khởi chạy container với Image_id như sau:
 docker run -it image_ID /bin/bash
 
 Chúng ta chạy câu lệnh sau để khởi chạy images mysql API từ một container:
+docker run --name some-mysql -p 6603:3306 -e MYSQL_ROOT_PASSWORD=root -d mysql:tag
 docker run -d --name mysql_server -p 6603:3306 mysql
 
 #build images mysql
