@@ -3,4 +3,3 @@ mysql.sock
 .env
 # ignore file build and dist
 build/
-dist/

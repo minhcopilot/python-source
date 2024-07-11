@@ -1,0 +1,47 @@
+1720705551183	geckodriver	INFO	Listening on 127.0.0.1:61102
+1720705554210	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofileUEBJCM"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720705554531	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720705554785	Marionette	INFO	Listening on port 61113
+Read port: 61113
+1720705554997	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: , line 0: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1720705696162	Marionette	INFO	Stopped listening on port 61113
+Dynamically enable window occlusion 1
+[Parent 17580, IPC I/O Parent] WARNING: DuplicateHandle failed for handle 0 in TransferHandles: file /builds/worker/checkouts/gecko/ipc/chromium/src/chrome/common/ipc_channel_win.cc:793
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1720705699629	geckodriver	INFO	Listening on 127.0.0.1:61199
+1720705702644	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-private" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofileSOmh6H"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720705702933	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720705702998	Marionette	INFO	Listening on port 61411
+Read port: 61411
+1720705703210	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: resource://gre/modules/AsyncShutdown.sys.mjs, line 575: NotFoundError: No such JSWindowActor 'DevToolsFrame'
+1720705717030	Marionette	INFO	Stopped listening on port 61411
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1720707663347	geckodriver	INFO	Listening on 127.0.0.1:49364
+1720707666369	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofileB8o4us"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720707667082	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720707667431	Marionette	INFO	Listening on port 49374
+Read port: 49374
+1720707667655	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function

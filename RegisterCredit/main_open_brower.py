@@ -9,16 +9,20 @@ from msedge.selenium_tools import Edge, EdgeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
 from operagxdriver import start_opera_driver
+
+def resource_path(relative_path):
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 class SeleniumWorker(QThread):
     finished = pyqtSignal(bool)
     error = pyqtSignal(str, bool)
 
-    def __init__(self, username, password, script1, script2, browser_type, incognito=False):
+    def __init__(self, username, password, script1, script2, browser_type, incognito=False, opera_path=None):
         super().__init__()
         self.username = username
         self.password = password
@@ -26,6 +30,7 @@ class SeleniumWorker(QThread):
         self.script2 = script2
         self.browser_type = browser_type
         self.incognito = incognito
+        self.opera_path = opera_path
 
     def run(self):
         try:
@@ -40,19 +45,21 @@ class SeleniumWorker(QThread):
                 options = webdriver.ChromeOptions()
                 if self.incognito:
                     options.add_argument("--incognito")
-                driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+                driver = webdriver.Chrome(resource_path("drivers/chromedriver.exe"), options=options)
             elif self.browser_type == "edge":
                 options = EdgeOptions()
                 options.use_chromium = True
                 if self.incognito:
                     options.add_argument("inprivate")
-                driver = Edge(executable_path=EdgeChromiumDriverManager().install(), options=options)
+                driver = Edge(executable_path=resource_path("drivers/msedgedriver.exe"), options=options)
             elif self.browser_type == "firefox":
                 options = FirefoxOptions()
                 if self.incognito:
                     options.add_argument("-private")
-                driver = webdriver.Firefox(executable_path=GeckoDriverManager().install(), options=options)
+                driver = webdriver.Firefox(executable_path=resource_path("drivers/geckodriver.exe"), options=options)
             else:  # Opera GX
+                if not self.opera_path:
+                    raise ValueError("Opera browser path not specified")
                 arguments = (
                     "--no-sandbox",
                     "--test-type",
@@ -63,8 +70,8 @@ class SeleniumWorker(QThread):
                 if self.incognito:
                     arguments += ("--incognito",)
                 driver = start_opera_driver(
-                    opera_browser_exe=r"C:\Users\ADMIN\AppData\Local\Programs\Opera\opera.exe",
-                    opera_driver_exe=r"D:\App\operadriver_win64\operadriver.exe",
+                    opera_browser_exe=self.opera_path,
+                    opera_driver_exe=resource_path("drivers/operadriver.exe"),
                     arguments=arguments
                 )
 
@@ -144,6 +151,17 @@ class SeleniumGUI(QMainWindow):
 
         main_layout.addLayout(button_layout)
 
+        # Add Opera path input
+        opera_layout = QHBoxLayout()
+        self.opera_path_label = QLabel("Opera Path:")
+        self.opera_path_input = QLineEdit()
+        self.opera_path_button = QPushButton("Browse")
+        self.opera_path_button.clicked.connect(self.browse_opera_path)
+        opera_layout.addWidget(self.opera_path_label)
+        opera_layout.addWidget(self.opera_path_input)
+        opera_layout.addWidget(self.opera_path_button)
+        main_layout.addLayout(opera_layout)
+
         container = QWidget()
         container.setLayout(main_layout)
         self.setCentralWidget(container)
@@ -168,6 +186,11 @@ class SeleniumGUI(QMainWindow):
 
         self.table.resizeColumnsToContents()
 
+    def browse_opera_path(self):
+        file_name, _ = QFileDialog.getOpenFileName(self, 'Select Opera Executable', '', 'Executable Files (*.exe)')
+        if file_name:
+            self.opera_path_input.setText(file_name)
+
     def run_script(self, browser_type, incognito=False):
         selected_rows = self.table.selectionModel().selectedRows()
         if not selected_rows:
@@ -180,38 +203,22 @@ class SeleniumGUI(QMainWindow):
         script1 = self.df.iloc[row]['script1']
         script2 = self.df.iloc[row]['script2']
 
-        self.worker = SeleniumWorker(username, password, script1, script2, browser_type, incognito)
+        opera_path = self.opera_path_input.text() if browser_type == "opera" else None
+        
+        if browser_type == "opera" and not opera_path:
+            QMessageBox.warning(self, 'Warning', 'Please specify Opera browser path')
+            return
+
+        self.worker = SeleniumWorker(username, password, script1, script2, browser_type, incognito, opera_path)
         self.worker.finished.connect(self.on_worker_finished)
         self.worker.error.connect(self.on_worker_error)
         self.worker.start()
 
-        if browser_type == "chrome":
-            button = self.run_chrome_incognito_button if incognito else self.run_chrome_button
-        elif browser_type == "edge":
-            button = self.run_edge_incognito_button if incognito else self.run_edge_button
-        elif browser_type == "firefox":
-            button = self.run_firefox_private_button if incognito else self.run_firefox_button
-        else:  # Opera
-            button = self.run_opera_incognito_button if incognito else self.run_opera_button
-        # button.setEnabled(False)
-
     def on_worker_finished(self, is_normal):
-        # self.enable_all_buttons()
         QMessageBox.information(self, 'Success', 'Script execution completed.')
 
     def on_worker_error(self, error_message, is_normal):
-        # self.enable_all_buttons()
         QMessageBox.critical(self, 'Error', f'An error occurred: {error_message}')
-
-    # def enable_all_buttons(self):
-    #     self.run_chrome_button.setEnabled(True)
-    #     self.run_chrome_incognito_button.setEnabled(True)
-    #     self.run_edge_button.setEnabled(True)
-    #     self.run_edge_incognito_button.setEnabled(True)
-    #     self.run_firefox_button.setEnabled(True)
-    #     self.run_firefox_private_button.setEnabled(True)
-    #     self.run_opera_button.setEnabled(True)
-    #     self.run_opera_incognito_button.setEnabled(True)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
