@@ -45,3 +45,19 @@ Read port: 49374
 1720707667655	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
 JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+1720710544573	geckodriver	INFO	Listening on 127.0.0.1:49625
+1720710547569	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-private" "-no-remote" "-profile" "C:\\Users\\ADMIN\\AppData\\Local\\Temp\\rust_mozprofiles64pOp"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1720710547845	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1720710547908	Marionette	INFO	Listening on port 49635
+Read port: 49635
+1720710548118	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+JavaScript error: resource://gre/modules/XULStore.sys.mjs, line 60: Error: Can't find profile directory.
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+JavaScript error: http://daotao.ute.udn.vn/images/icemegamenu.js, line 212: TypeError: $(...).getElements is not a function
+1720710564637	Marionette	INFO	Stopped listening on port 49635
+Dynamically enable window occlusion 1
+JavaScript error: chrome://remote/content/marionette/cert.sys.mjs, line 51: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]

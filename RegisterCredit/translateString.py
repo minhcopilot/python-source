@@ -50,7 +50,7 @@ async function doc() {{
     return await new Promise(resolve => {{
         count++;
         document.title = "[" + count + "]";
-        $.post('http://daotao.ute.udn.vn/dkmhcmt.asp', "mldk={result_string}", function(data) {{
+        $.post('http://daotao.ute.udn.vn/dkmhcmtbk.asp', "mldk={result_string}", function(data) {{
             document.html.innerHTML = data;
             var body = data;
             var a = body.match(/Xin mời đăng nhập(.*?)ký môn học/)[1];
