@@ -42,20 +42,26 @@ class SeleniumWorker(QThread):
     def run_selenium_script(self):
         def init_driver(url):
             if self.browser_type == "chrome":
-                options = webdriver.ChromeOptions()
+                options = ChromeOptions()
                 if self.incognito:
                     options.add_argument("--incognito")
+                options.add_argument("--auto-open-devtools-for-tabs")
                 driver = webdriver.Chrome(resource_path("drivers/chromedriver.exe"), options=options)
             elif self.browser_type == "edge":
                 options = EdgeOptions()
                 options.use_chromium = True
                 if self.incognito:
                     options.add_argument("inprivate")
+                options.add_argument("--auto-open-devtools-for-tabs")
                 driver = Edge(executable_path=resource_path("drivers/msedgedriver.exe"), options=options)
             elif self.browser_type == "firefox":
                 options = FirefoxOptions()
                 if self.incognito:
                     options.add_argument("-private")
+                options.set_preference("devtools.toolbox.host", "right")
+                options.set_preference("devtools.toolbox.previousHost", "right")
+                options.set_preference("devtools.toolbox.splitconsoleHeight", 200)
+                options.set_preference("devtools.toolbox.selectedTool", "webconsole")
                 driver = webdriver.Firefox(executable_path=resource_path("drivers/geckodriver.exe"), options=options)
             else:  # Opera GX
                 if not self.opera_path:
@@ -66,6 +72,7 @@ class SeleniumWorker(QThread):
                     "--no-default-browser-check",
                     "--no-first-run",
                     "--start-maximized",
+                    "--auto-open-devtools-for-tabs",
                 )
                 if self.incognito:
                     arguments += ("--incognito",)
