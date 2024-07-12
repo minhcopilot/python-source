@@ -65,7 +65,7 @@ main();
     # Handle the password field to keep the original format
     password = login_info['mk']
     if isinstance(password, pd.Timestamp):
-        password = password.strftime('%d/%m/%Y')
+        password = password.strftime('%m/%d/%Y')
     else:
         password = str(password)
     # Create the login JavaScript string

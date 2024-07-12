@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['translatestring.py'],
+    ['translateString.py'],
     pathex=[],
     binaries=[],
     datas=[('danhsach.xlsx', '.')],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='translatestring',
+    name='translateString',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
