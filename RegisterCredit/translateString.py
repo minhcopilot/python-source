@@ -74,7 +74,12 @@ main();
     login_info = df_code.iloc[0]  # Assuming the first row contains login info
     ma_sv = str(login_info['tk']).split('.')[0]
     password = login_info['mk']
-    
+     # Handle the password field to keep the original format
+    password = login_info['mk']
+    if isinstance(password, pd.Timestamp):
+        password = password.strftime('%d/%m/%Y')
+    else:
+        password = str(password)
     # Create the login JavaScript string
     login_js = f"""
 var count = 0;
