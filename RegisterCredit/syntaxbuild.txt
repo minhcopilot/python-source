@@ -1,0 +1,2 @@
+pyinstaller --onefile --windowed --add-data "danhsach.xlsx:." main_open_brower.py
+pyinstaller SeleniumGUI.spec

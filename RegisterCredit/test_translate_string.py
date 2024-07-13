@@ -67,7 +67,7 @@ main();
     if isinstance(password, pd.Timestamp):
         password = password.strftime('%m/%d/%Y')
     else:
-        password = str(password)
+        password = str(password).split('.')[0]
     # Create the login JavaScript string
     login_js = f"""
 var count = 0;
