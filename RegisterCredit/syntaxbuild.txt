@@ -1,2 +1,3 @@
-pyinstaller --onefile --windowed --add-data "danhsach.xlsx:." main_open_brower.py
+pyinstaller --onefile --windowed --add-data "danhsach.xlsx:." trans.py
 pyinstaller SeleniumGUI.spec
+pyinstaller translatestring.spec
